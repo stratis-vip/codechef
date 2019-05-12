@@ -1,0 +1,6 @@
+bst/build
+bst/objs
+bst/*dSYM
+bst/in
+bst/s
+bst/.vscode
