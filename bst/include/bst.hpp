@@ -37,15 +37,7 @@ public:
 
   ~BST()
   {
-    if (left != nullptr)
-      freeBST(&left);
-    if (right != nullptr)
-      freeBST(&right);
-  }
 
-  void freeBST(std::unique_ptr<BST> *node)
-  {
-    std::cout << "Pointer freed"<< std::endl;
   }
 
   const int getValue() { return value; }
