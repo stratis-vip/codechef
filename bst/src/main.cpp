@@ -1,5 +1,13 @@
 #include <iostream>
-#include "bst.hpp"
+// #include "bst.hpp"
+#include <memory>
+
+struct BS{
+  BS(){
+    std::cout << " "<< std::endl;
+  }
+
+};
 
 int main(int argc, char *argv[])
 {
@@ -33,7 +41,6 @@ int main(int argc, char *argv[])
   //   }
   // }
   // delete root;
-  char *x = (char*)malloc(10 * sizeof(char*));
-  free(x);
-  return x[5];
+  std::unique_ptr<BS> al = std::make_unique<BS>();
+return 0;
 }

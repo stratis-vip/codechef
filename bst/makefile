@@ -11,7 +11,7 @@ endif
 #CPPFLAGS=-I/usr/local/opt/curl/include
 CC=g++
 DEBUG = -ggdb 
-CFLAGS_STANDARD = -std=gnu++11
+CFLAGS_STANDARD = -std=gnu++14
 CFLAGS_WARNING1 = -Wall
 CFLAGS_WARNING2 = -Werror
 CFLAGS_EXTRA = -m64

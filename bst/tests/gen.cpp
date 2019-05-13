@@ -23,7 +23,7 @@ TEST_F(TestingBSTEmptyObject, getPosition)
 
 TEST_F(TestingBSTEmptyObject, Insert20)
 {
-  BST * temp = tclass.insertValue(20);
+  std::shared_ptr<BST> temp = tclass.insertValue(20);
   ASSERT_THAT(temp->getValue(), Eq(20));
 }
 

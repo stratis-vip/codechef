@@ -11,38 +11,39 @@ public:
     right = nullptr;
   };
 
-  std::unique_ptr<BST> insertValue(const int val)
+  std::shared_ptr<BST> insertValue(const int val)
   {
+    std::shared_ptr<BST> retval;
     if (val > value)
     {
       if (right == nullptr)
       {
-        right = new BST(val, position * 2 + 1);
-        return right;
+        right = std::make_unique<BST>(val, position * 2 + 1);
+        return std::make_shared<BST>(val, position * 2 + 1);
       }
-      right->insertValue(val);
+      retval = right->insertValue(val);
     }
     else if (val < value)
     {
       if (left == nullptr)
       {
-        left = std::make_unique(val, position * 2);
-        return left;
+        left = std::make_unique<BST>(val, position * 2);
+        return std::make_shared<BST>(val, position * 2);
       }
       left->insertValue(val);
     }
-    return this;
+    return nullptr;
   }
 
   ~BST()
   {
     if (left != nullptr)
-      freeBST(left);
+      freeBST(&left);
     if (right != nullptr)
-      freeBST(right);
+      freeBST(&right);
   }
 
-  void freeBST(std::unique_ptr<BST> node)
+  void freeBST(std::unique_ptr<BST> *node)
   {
     std::cout << "Pointer freed"<< std::endl;
   }
